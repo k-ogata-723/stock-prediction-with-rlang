@@ -18,7 +18,7 @@ print(length(dataRegressionTrain[ , 2]))
 print(length(dataRegressionTrain[ , 3]))
 print(length(dataRegressionTrain[ , 4]))
 print(length(dataRegressionTrain[ , 5]))
-print(dataRegressionTrain)
+# print(dataRegressionTrain)
 
 # それぞれのデータを取り出し
 lowPrice <- stock[ , 4]
