@@ -15,6 +15,7 @@ lowPrice <- stock[ , 4]
 highPrice <- stock[ , 3]
 date <- stock[ , 1]
 
+
 # 確認用にlowPriceをプロット
 # plot(date, lowPrice, col="blue", main="plot row stock data", xlab="date", ylab="price")
 
@@ -35,7 +36,13 @@ modelLm <- lm(
   data = dataRegressionTrain
 )
 
+print(modelLm)
+
 sum <- summary(modelLm)
-sum
+print(sum)
 
 modelLm <- step(modelLm)
+
+# データと重回帰結果をプロットしていく
+plot(lowPrice, highPrice)
+lines(lowPrice, fitted(modelLm))
