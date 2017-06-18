@@ -11,6 +11,7 @@ y <- stock[ ,5]
 dataRegressionTrain <- stockData[ , -1]
 
 # それぞれのデータを取り出し
+# 学習には利用していない
 lowPrice <- stock[ , 4]
 highPrice <- stock[ , 3]
 date <- stock[ , 1]
@@ -21,13 +22,21 @@ date <- stock[ , 1]
 
 # data.frame型にまとめていく
 # 始値と出来高と売買代金を利用する
+
+## train データ
 dataRegressionTrain <- data.frame(
   y = stock[ ,5],
   x1 = stock[ ,2],
-#   x2 = stock[ ,3],
-#   x3 = stock[ ,4],
   x4 = stock[ ,6],
   x5 = stock[ ,7]
+)
+
+## test データ
+dataRegressionTrain <- data.frame(
+y = stock[ ,5],
+x1 = stock[ ,2],
+x4 = stock[ ,6],
+x5 = stock[ ,7]
 )
 
 
